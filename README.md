@@ -16,6 +16,10 @@ This repository is published as a GitHub Pages site.
 - Change the `theme:` value in [`_config.yml`](_config.yml) to another GitHub Pages supported theme, such as
   `jekyll-theme-minimal` or `jekyll-theme-slate`, to change the look of the site.
 - Add more `.md` files with front matter (e.g. `about.md`) to create additional pages.
+- The "Showcase" images in `index.md` are pulled from Unsplash's topic-based `source.unsplash.com` endpoint, so
+  the exact image served can change over time. For permanent or licensed images, add files under a new
+  `assets/images` folder and reference them with relative paths (e.g. `![Alt text](assets/images/example.jpg)`)
+  instead of the dynamic Unsplash URLs.
 
 After pushing changes to `main`, check the repository's **Actions** tab for the automatic
 "pages build and deployment" workflow run, then visit the published GitHub Pages URL to see the result.
