@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grow With Abi (Demo Clone)</title>
+<style>
+:root{--blue:#1d4ed8;--navy:#0f1f4a;--light:#f2f6ff;--text:#1f2937;--muted:#6b7280;--accent:#f59e0b}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;color:var(--text);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+.topbar{background:var(--navy);color:#cbd5e1;font-size:14px;padding:8px 0}
+.topbar .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+header.nav{position:sticky;top:0;background:#fff;box-shadow:0 1px 6px rgba(0,0,0,.08);z-index:10}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{font-weight:800;font-size:22px;color:var(--navy)}.logo span{color:var(--blue)}
+nav a{margin:0 12px;font-weight:500}nav a:hover{color:var(--blue)}
+.btn{display:inline-block;background:var(--blue);color:#fff;padding:12px 24px;border-radius:6px;font-weight:600;border:0;cursor:pointer;font-size:16px}
+.btn:hover{background:#1e40af}.btn.alt{background:transparent;border:2px solid #fff}
+.btn.sm{padding:9px 18px}
+.hero{background:linear-gradient(120deg,rgba(15,31,74,.92),rgba(29,78,216,.75)),repeating-linear-gradient(90deg,#334 0 40px,#445 40px 80px);color:#fff;padding:110px 0;text-align:center}
+.hero h1{font-size:46px;line-height:1.15;margin:0 0 16px}
+.hero p{font-size:20px;max-width:680px;margin:0 auto 30px;color:#dbe4ff}
+.hero .btn{margin:6px}
+.features{background:var(--light);padding:28px 0}
+.features ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.features li::before{content:"✔ ";color:var(--blue);font-weight:700}
+section{padding:70px 0}
+h2{font-size:34px;color:var(--navy);margin:0 0 12px;text-align:center}
+.sub{text-align:center;color:var(--muted);max-width:680px;margin:0 auto 40px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:26px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+.card h3{margin:0 0 8px;color:var(--navy)}
+.card ul{padding-left:18px;color:var(--muted)}
+.tag{display:inline-block;background:#dbeafe;color:var(--blue);font-size:12px;font-weight:700;border-radius:20px;padding:2px 10px;margin-bottom:10px}
+.gray{background:var(--light)}
+.tool{max-width:700px;margin:0 auto;background:#fff;border-radius:12px;padding:30px;box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.tool label{display:block;margin:10px 0;padding:12px 14px;border:1px solid #d1d5db;border-radius:8px;cursor:pointer}
+.tool label:hover{border-color:var(--blue)}
+.result{margin-top:18px;padding:16px;background:#ecfdf5;border-left:4px solid #10b981;border-radius:6px;display:none}
+.steps{counter-reset:s}
+.steps .card{text-align:center}
+.steps .card::before{counter-increment:s;content:counter(s);display:flex;align-items:center;justify-content:center;width:48px;height:48px;margin:0 auto 12px;border-radius:50%;background:var(--blue);color:#fff;font-weight:700;font-size:20px}
+.logos{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
+.logos span{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:16px 26px;font-weight:700;color:var(--muted)}
+blockquote{max-width:760px;margin:0 auto;font-size:22px;font-style:italic;text-align:center;color:var(--navy)}
+blockquote footer{font-size:15px;font-style:normal;color:var(--muted);margin-top:12px}
+.cta{background:var(--navy);color:#fff;text-align:center}
+.cta h2{color:#fff}
+footer.main{background:#0a1431;color:#9ca3af;padding:50px 0 24px;font-size:14px}
+footer.main .grid{margin-bottom:30px}
+footer.main h4{color:#fff;margin:0 0 10px}
+footer.main a{display:block;margin:4px 0}
+.disc{border-top:1px solid #1f2a52;padding-top:18px;font-size:12px}
+@media(max-width:800px){nav{display:none}.hero h1{font-size:32px}}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <span>📞 (555) 010-0123 &nbsp;|&nbsp; ✉ hello@example.com</span>
+  <span>Maryland-based advisors</span>
+</div></div>
+
+<header class="nav"><div class="wrap">
+  <a class="logo" href="#">Grow<span>WithAbi</span></a>
+  <nav>
+    <a href="#team">Our Team</a><a href="#financial">Financial Solutions</a><a href="#tax">Tax Solutions</a>
+    <a href="#tools">Retirement Tools</a><a href="#resources">Resources</a><a href="#contact">Contact</a>
+  </nav>
+  <a class="btn sm" href="#contact">Schedule a Call</a>
+</div></header>
+
+<div class="hero"><div class="wrap">
+  <h1>Set your goals today. Grow your future tomorrow.</h1>
+  <p>Retirement and tax planning built around people who serve the public, with clear guidance at every step.</p>
+  <a class="btn" href="#contact">Schedule a Consultation</a>
+  <a class="btn alt" href="#financial">Explore Services</a>
+</div></div>
+
+<div class="features"><div class="wrap"><ul>
+  <li>Tax-efficient planning</li><li>Roth conversion strategies</li><li>Trusted partnerships</li>
+  <li>Downside protection options</li><li>Federal benefit expertise</li><li>Estate &amp; legacy planning</li>
+  <li>Local Maryland advisors</li>
+</ul></div></div>
+
+<section id="financial"><div class="wrap">
+  <h2>Featured Strategies</h2>
+  <p class="sub">Three signature plans designed to help you keep more of what you've earned.</p>
+  <div class="grid">
+    <div class="card"><span class="tag">STRATEGY</span><h3>Roth Rescue</h3><p>Reposition savings for tax-free growth and flexible income in retirement.</p><a class="btn sm" href="#tools">Do I qualify?</a></div>
+    <div class="card"><span class="tag">STRATEGY</span><h3>TFRA</h3><p>A tax-free retirement approach focused on predictable, protected income.</p><a class="btn sm" href="#tools">Do I qualify?</a></div>
+    <div class="card"><span class="tag">STRATEGY</span><h3>TSP Rescue Plan</h3><p>Review your Thrift Savings Plan allocation and reduce avoidable risk.</p><a class="btn sm" href="#tools">Do I qualify?</a></div>
+  </div>
+</div></section>
+
+<section class="gray" id="tools"><div class="wrap">
+  <h2>Priority Ranker</h2>
+  <p class="sub">What matters most to you right now?</p>
+  <div class="tool">
+    <label><input type="radio" name="p" value="Tax-free wealth: a Roth-focused review is a great first step."> Tax-free wealth</label>
+    <label><input type="radio" name="p" value="Estate planning: let's map out how your assets pass to loved ones."> Estate planning</label>
+    <label><input type="radio" name="p" value="Business succession: we'll outline options for a smooth handoff."> Business succession</label>
+    <label><input type="radio" name="p" value="Protecting savings: we'll look at downside-protection choices."> Protecting my savings</label>
+    <button class="btn" onclick="rank()">See my recommendation</button>
+    <div class="result" id="res"></div>
+  </div>
+
+  <div class="grid" style="margin-top:40px">
+    <div class="card"><h3>Retirement Readiness Score</h3><p>Answer a few questions to preview your readiness.</p>
+      <label>Years to retirement <input id="yrs" type="number" value="15" min="0" max="50" style="width:70px"></label><br><br>
+      <label>Savings rate (%) <input id="rate" type="number" value="10" min="0" max="60" style="width:70px"></label><br><br>
+      <button class="btn sm" onclick="score()">Calculate</button>
+      <p id="score" style="font-weight:700;color:var(--blue)"></p></div>
+    <div class="card"><h3>Portfolio Risk Analyzer</h3><p>Sample output:</p>
+      <p>Risk level: <b>Moderate</b></p>
+      <div style="background:#e5e7eb;border-radius:20px;height:14px"><div style="width:55%;height:100%;background:var(--accent);border-radius:20px"></div></div>
+      <p class="sub" style="text-align:left;margin:10px 0 0">Illustrative only.</p></div>
+  </div>
+</div></section>
+
+<section id="tax"><div class="wrap">
+  <h2>Our Services</h2>
+  <p class="sub">Financial and tax solutions under one roof.</p>
+  <div class="grid">
+    <div class="card"><h3>Financial Solutions</h3><ul><li>Retirement income planning</li><li>Protected growth options</li><li>Legacy &amp; estate strategies</li><li>Federal benefits review</li></ul></div>
+    <div class="card"><h3>Tax Solutions</h3><ul><li>Roth conversion analysis</li><li>Tax-bracket management</li><li>Required distribution planning</li><li>Year-end tax moves</li></ul></div>
+  </div>
+</div></section>
+
+<section class="gray" id="team"><div class="wrap">
+  <h2>Experience You Can Trust</h2>
+  <p class="sub">We regularly help employees across the public sector.</p>
+  <div class="logos"><span>Agency A</span><span>Agency B</span><span>Department C</span><span>Service D</span><span>Bureau E</span></div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>How It Works</h2>
+  <p class="sub">A simple four-step process.</p>
+  <div class="grid steps">
+    <div class="card"><h3>Discover</h3><p>We learn your goals and situation.</p></div>
+    <div class="card"><h3>Plan</h3><p>We build a roadmap tailored to you.</p></div>
+    <div class="card"><h3>Strategize</h3><p>We compare options and trade-offs.</p></div>
+    <div class="card"><h3>Decide</h3><p>You choose with confidence.</p></div>
+  </div>
+</div></section>
+
+<section class="gray"><div class="wrap">
+  <blockquote>“Placeholder testimonial: the process was quick, clear, and stress-free.”
+    <footer>— Sample Client</footer></blockquote>
+</div></section>
+
+<section id="resources"><div class="wrap">
+  <h2>Latest Resources</h2>
+  <p class="sub">Placeholder articles for the demo.</p>
+  <div class="grid">
+    <div class="card"><span class="tag">5 min read</span><h3>Understanding Roth Conversions</h3><p>A plain-language overview of when they make sense.</p><a href="#" style="color:var(--blue);font-weight:600">Read more →</a></div>
+    <div class="card"><span class="tag">7 min read</span><h3>Making the Most of Your TSP</h3><p>Allocation basics for long-term savers.</p><a href="#" style="color:var(--blue);font-weight:600">Read more →</a></div>
+    <div class="card"><span class="tag">4 min read</span><h3>Planning Income for Retirement</h3><p>Ways to turn savings into a steady paycheck.</p><a href="#" style="color:var(--blue);font-weight:600">Read more →</a></div>
+  </div>
+</div></section>
+
+<section class="cta" id="contact"><div class="wrap">
+  <h2>Ready to get started?</h2>
+  <p class="sub" style="color:#cbd5e1">Book a no-pressure conversation with our team.</p>
+  <a class="btn" href="mailto:hello@example.com">Schedule a Call</a>
+</div></section>
+
+<footer class="main"><div class="wrap">
+  <div class="grid">
+    <div><h4>GrowWithAbi</h4>Demo clone for presentation purposes.</div>
+    <div><h4>Services</h4><a href="#financial">Financial Solutions</a><a href="#tax">Tax Solutions</a><a href="#tools">Retirement Tools</a></div>
+    <div><h4>Quick Links</h4><a href="#team">Our Team</a><a href="#resources">Resources</a><a href="#contact">Contact</a></div>
+    <div><h4>Contact</h4>(555) 010-0123<br>hello@example.com</div>
+  </div>
+  <div class="disc">Demo page with placeholder content. Not financial advice. Illustrative tools only.</div>
+</div></footer>
+
+<script>
+function rank(){
+  var s=document.querySelector('input[name=p]:checked'),r=document.getElementById('res');
+  r.style.display='block';r.textContent=s?s.value:'Please pick a priority first.';
+}
+function score(){
+  var y=+document.getElementById('yrs').value,r=+document.getElementById('rate').value;
+  var v=Math.max(0,Math.min(100,Math.round(y*1.8+r*3.2)));
+  document.getElementById('score').textContent='Your sample score: '+v+' / 100';
+}
+</script>
+</body>
+</html>
