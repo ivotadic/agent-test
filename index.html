@@ -63,9 +63,22 @@ header.nav .wrap{height:80px}
 header.nav.scrolled{top:0;background:var(--navy);box-shadow:0 2px 12px rgba(0,0,0,.3)}
 header.nav nav a{color:#fff;font-size:14px}
 header.nav nav a:hover{color:var(--accent)}
-.logo{color:#fff;font-size:26px;font-weight:700;border-left:2px solid rgba(212,169,72,.6);padding-left:12px;line-height:1}
+.logo{display:block;color:#fff;font-size:26px;font-weight:700;border-left:2px solid rgba(212,169,72,.6);padding-left:12px;line-height:1}
 .logo span{color:var(--accent);font-style:italic;font-weight:800}
 .logo small{display:block;font:500 10px Inter,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:6px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:52px;width:auto;filter:drop-shadow(0 0 2px rgba(255,255,255,.4))}
+.dd{position:relative;display:inline-block}
+.dd .menu{display:none;position:absolute;top:100%;left:0;min-width:210px;background:#fff;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.25);padding:8px 0;margin-top:10px}
+.dd:hover .menu{display:block}
+.dd .menu::before{content:"";position:absolute;top:-12px;left:0;right:0;height:12px}
+.dd .menu a{display:block;margin:0;padding:9px 18px;color:var(--navy);font-weight:500}
+.dd .menu a:hover{background:var(--light);color:#8a6a1c}
+.hero{background:linear-gradient(105deg,rgba(12,27,58,.88) 25%,rgba(12,27,58,.4)),url(images/hero/dc-capitol.jpg) center/cover !important}
+.ticker{background:var(--navy);color:var(--accent);overflow:hidden;white-space:nowrap;padding:12px 0;font-size:14px;font-weight:500}
+.ticker div{display:inline-block;animation:tick 40s linear infinite}
+.ticker span{margin:0 28px}
+@keyframes tick{to{transform:translateX(-50%)}}
 .btn{background:var(--accent);color:var(--navy);border-radius:999px}
 .btn:hover{background:#e0bb5c}
 .btn.alt{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.7)}
@@ -88,15 +101,19 @@ footer.main{background:var(--navy)}
 <body>
 
 <div class="topbar"><div class="wrap">
-  <span>📞 (555) 010-0123 &nbsp;|&nbsp; ✉ hello@example.com</span>
+  <span><a href="tel:+13017329191">📞 +1 (301) 732-9191</a> &nbsp;|&nbsp; <a href="mailto:abi@growwithabi.com">✉ abi@growwithabi.com</a></span>
   <span>Maryland-based advisors</span>
 </div></div>
 
 <header class="nav"><div class="wrap">
-  <a class="logo" href="#">Grow With <span>Abi</span><small>Financial Advisory</small></a>
+  <a class="brand" href="#"><img src="images/logo.png" alt="Grow With Abi"><span class="logo">Grow With <span>Abi</span><small>Financial Advisory</small></span></a>
   <nav>
-    <a href="#team">Our Team</a><a href="#financial">Financial Solutions</a><a href="#tax">Tax Solutions</a>
-    <a href="#tools">Retirement Tools</a><a href="#resources">Resources</a><a href="#contact">Contact</a>
+    <div class="dd"><a href="#team">Our Team ▾</a><div class="menu"><a href="#team">About</a><a href="#team">Federal Employees</a></div></div>
+    <div class="dd"><a href="#financial">Financial Solutions ▾</a><div class="menu"><a href="#financial">Overview</a><a href="#financial">Roth Rescue</a><a href="#financial">TFRA</a><a href="#financial">TSP Rescue Plan</a></div></div>
+    <div class="dd"><a href="#tax">Tax Solutions ▾</a><div class="menu"><a href="#tax">Overview</a><a href="#tax">Roth Conversions</a><a href="#tax">Tax-Bracket Planning</a></div></div>
+    <div class="dd"><a href="#tools">Retirement Tools ▾</a><div class="menu"><a href="#tools">Retirement Score</a><a href="#tools">Risk Analyzer</a><a href="#tools">Priority Ranker</a></div></div>
+    <div class="dd"><a href="#resources">Resources ▾</a><div class="menu"><a href="#resources">All Articles</a><a href="#resources">FERS Pension Guide</a><a href="#resources">TSP to IRA Rollover</a></div></div>
+    <a href="#contact">Contact</a>
   </nav>
   <a class="btn sm" href="#contact">Schedule a Call</a>
 </div></header>
@@ -109,11 +126,11 @@ footer.main{background:var(--navy)}
   <a class="btn alt" href="#financial">Explore Services</a>
 </div></div>
 
-<div class="features"><div class="wrap"><ul>
-  <li>Tax-efficient planning</li><li>Roth conversion strategies</li><li>Trusted partnerships</li>
-  <li>Downside protection options</li><li>Federal benefit expertise</li><li>Estate &amp; legacy planning</li>
-  <li>Local Maryland advisors</li>
-</ul></div></div>
+<div class="ticker"><div id="tk"></div></div>
+<script>
+(function(){var t=["Built for American Families","Tax-Efficient Retirement Planning","Roth & Rollover Strategies","50+ Strategic Partners","Downside Protection Options","Estate & Legacy Planning","Maryland-Based Advisors","10+ Years of Experience"];
+var h=t.map(function(x){return "<span>★ "+x+"</span>"}).join("");document.getElementById("tk").innerHTML=h+h;})();
+</script>
 
 <section id="financial"><div class="wrap">
   <h2>Featured Strategies</h2>
@@ -194,7 +211,7 @@ footer.main{background:var(--navy)}
 <section class="cta" id="contact"><div class="wrap">
   <h2>Ready to get started?</h2>
   <p class="sub" style="color:#cbd5e1">Book a no-pressure conversation with our team.</p>
-  <a class="btn" href="mailto:hello@example.com">Schedule a Call</a>
+  <a class="btn" href="mailto:abi@growwithabi.com">Schedule a Call</a>
 </div></section>
 
 <footer class="main"><div class="wrap">
@@ -202,7 +219,7 @@ footer.main{background:var(--navy)}
     <div><h4>GrowWithAbi</h4>Demo clone for presentation purposes.</div>
     <div><h4>Services</h4><a href="#financial">Financial Solutions</a><a href="#tax">Tax Solutions</a><a href="#tools">Retirement Tools</a></div>
     <div><h4>Quick Links</h4><a href="#team">Our Team</a><a href="#resources">Resources</a><a href="#contact">Contact</a></div>
-    <div><h4>Contact</h4>(555) 010-0123<br>hello@example.com</div>
+    <div><h4>Contact</h4><a href="tel:+13017329191">+1 (301) 732-9191</a><a href="mailto:abi@growwithabi.com">abi@growwithabi.com</a></div>
   </div>
   <div class="disc">Demo page with placeholder content. Not financial advice. Illustrative tools only.</div>
 </div></footer>
