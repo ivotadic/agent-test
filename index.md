@@ -3,7 +3,7 @@ layout: default
 title: Test Agents
 ---
 
-# Test Agents
+# Test Agents — {{ "today" | date: "%B %-d, %Y" }}
 
 Welcome! This page is served with the **Jekyll Cayman theme** via GitHub Pages.
 

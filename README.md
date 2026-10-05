@@ -13,6 +13,9 @@ This repository is published as a GitHub Pages site.
 ## Customizing
 
 - Edit [`index.md`](index.md) to change the page content.
+- The H1 heading in `index.md` includes today's date via Jekyll's Liquid `date` filter
+  (`{{ "today" | date: "%B %-d, %Y" }}`). This date is computed at each Jekyll build, so it reflects the
+  time of the last deploy rather than the visitor's local "today".
 - Change the `theme:` value in [`_config.yml`](_config.yml) to another GitHub Pages supported theme, such as
   `jekyll-theme-minimal` or `jekyll-theme-slate`, to change the look of the site.
 - Add more `.md` files with front matter (e.g. `about.md`) to create additional pages.
